@@ -17,7 +17,7 @@ export default function Donate() {
       const res = await fetch('/api/proxy/pw-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: phone, username: phone }),
+        body: JSON.stringify({ phoneNumber: `91${phone}` }),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -40,7 +40,7 @@ export default function Donate() {
       const res = await fetch('/api/proxy/pw-verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ otp, phoneNumber: phone, username: phone }),
+        body: JSON.stringify({ phoneNumber: `91${phone}`, otp }),
       });
       const data = await res.json();
       if (res.ok && data.success && data.accessToken) {

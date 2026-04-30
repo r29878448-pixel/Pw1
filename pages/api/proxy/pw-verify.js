@@ -1,10 +1,9 @@
-import { getApiUrl } from '../../../lib/apiConfig';
+const BASE_URL = 'https://apiserver-all.vercel.app';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
   try {
-    const apiUrl = await getApiUrl();
-    const response = await fetch(`${apiUrl}/api/pw/verify`, {
+    const response = await fetch(`${BASE_URL}/api/pw/verify`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(req.body),

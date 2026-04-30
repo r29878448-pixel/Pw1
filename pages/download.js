@@ -276,26 +276,34 @@ function DownloadPage() {
     let totalBytes = 0;
     let done = 0;
 
-    for (let i = 0; i < segments.length; i++) {
-      if (stopRef.current) { log('Stopped', 'warning'); setPhase('ready'); return; }
+    const CONCURRENCY = 6; // download 6 segments at a time
+
+    const downloadSegment = async (i) => {
+      if (stopRef.current) return;
       while (pauseRef.current) {
         await new Promise(r => setTimeout(r, 300));
-        if (stopRef.current) { setPhase('ready'); return; }
+        if (stopRef.current) return;
       }
+      const r = await fetch(`/api/proxy/hls?url=${encodeURIComponent(segments[i].url)}`);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const raw = await r.arrayBuffer();
+      const dec = await aesDecrypt(raw, keyHex.trim());
+      buffers[i] = dec;
+      totalBytes += dec.length;
+      done++;
+      setDownloaded(prev => prev + dec.length);
+      setProgress(Math.round((done / segments.length) * 100));
+      setStatusMsg(`${done} / ${segments.length} segments downloaded`);
+    };
 
+    // Process in parallel batches
+    for (let i = 0; i < segments.length; i += CONCURRENCY) {
+      if (stopRef.current) { log('Stopped', 'warning'); setPhase('ready'); return; }
+      const batch = segments.slice(i, i + CONCURRENCY).map((_, j) => i + j);
       try {
-        const r = await fetch(`/api/proxy/hls?url=${encodeURIComponent(segments[i].url)}`);
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const raw = await r.arrayBuffer();
-        const dec = await aesDecrypt(raw, keyHex.trim());
-        buffers[i] = dec;
-        totalBytes += dec.length;
-        done++;
-        setDownloaded(totalBytes);
-        setProgress(Math.round((done / segments.length) * 100));
-        setStatusMsg(`${done}/${segments.length} segments`);
+        await Promise.all(batch.map(idx => downloadSegment(idx)));
       } catch (e) {
-        log(`✗ Segment ${i + 1} failed: ${e.message}`, 'error');
+        log(`✗ Segment failed: ${e.message}`, 'error');
         log('Download paused due to error. Resume or Stop.', 'warning');
         pauseRef.current = true;
         setPaused(true);
@@ -305,6 +313,7 @@ function DownloadPage() {
 
     // Combine
     log('Combining segments...', 'info');
+    setStatusMsg('Combining segments into video file...');
     const combined = new Uint8Array(totalBytes);
     let offset = 0;
     for (const buf of buffers) { if (buf) { combined.set(buf, offset); offset += buf.length; } }
@@ -390,10 +399,21 @@ function DownloadPage() {
               {isDownloading && (
                 <div className="grid grid-cols-2 gap-3">
                   <button onClick={togglePause} className="py-3 rounded-xl font-bold text-sm border-2 border-gray-300 text-gray-700 hover:bg-gray-50 transition flex items-center justify-center gap-2">
-                    {paused ? '▶ Resume' : '⏸ Pause'}
+                    {paused ? (
+                      <>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        Resume
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                        Pause
+                      </>
+                    )}
                   </button>
-                  <button onClick={() => { stopRef.current = true; setPaused(false); log('Stopping...', 'warning'); }} className="py-3 rounded-xl font-bold text-sm bg-red-500 hover:bg-red-600 text-white transition">
-                    ⏹ Stop
+                  <button onClick={() => { stopRef.current = true; setPaused(false); log('Stopping...', 'warning'); }} className="py-3 rounded-xl font-bold text-sm bg-red-500 hover:bg-red-600 text-white transition flex items-center justify-center gap-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+                    Stop
                   </button>
                 </div>
               )}
@@ -403,12 +423,47 @@ function DownloadPage() {
           {/* Progress bar */}
           {(isDownloading || phase === 'done') && (
             <div className="bg-white rounded-2xl border border-gray-200 p-5">
+              {/* Segment download info banner */}
+              {isDownloading && progress < 100 && (
+                <div className="flex items-start gap-3 mb-4 p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
+                  <div className="w-8 h-8 flex-shrink-0 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-indigo-600 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-indigo-800">Downloading video segments...</p>
+                    <p className="text-xs text-indigo-500 mt-0.5">Your video will be ready once all segments are downloaded and merged. Please keep this tab open.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Done banner */}
+              {phase === 'done' && (
+                <div className="flex items-center gap-3 mb-4 p-3 bg-green-50 border border-green-100 rounded-xl">
+                  <div className="w-8 h-8 flex-shrink-0 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p className="text-sm font-semibold text-green-800">Video downloaded successfully!</p>
+                </div>
+              )}
+
               <div className="flex justify-between text-sm mb-2">
                 <span className="font-semibold text-gray-700">{statusMsg}</span>
-                <span className="text-gray-500">{progress}%</span>
+                <span className="font-bold text-indigo-600">{progress}%</span>
               </div>
               <div className="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
-                <div className="h-full rounded-full transition-all duration-300" style={{ width: `${progress}%`, backgroundColor: '#5a4bda' }} />
+                <div
+                  className="h-full rounded-full transition-all duration-300 relative overflow-hidden"
+                  style={{ width: `${progress}%`, backgroundColor: phase === 'done' ? '#22c55e' : '#5a4bda' }}
+                >
+                  {isDownloading && (
+                    <div className="absolute inset-0 bg-white/20 animate-pulse" />
+                  )}
+                </div>
               </div>
               <div className="flex justify-between text-xs text-gray-400 mt-2">
                 <span>{(downloaded / 1048576).toFixed(2)} MB downloaded</span>
@@ -435,7 +490,13 @@ function DownloadPage() {
           {/* Quality selector */}
           {qualities.length > 1 && (
             <div className="bg-white rounded-2xl border border-gray-200 p-5">
-              <h3 className="font-bold text-gray-800 mb-3">📺 Available Qualities</h3>
+              <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" strokeWidth="2"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 21h8M12 17v4"/>
+                </svg>
+                Available Qualities
+              </h3>
               <div className="space-y-2">
                 {qualities.map((q, i) => (
                   <div key={i} onClick={() => selectQuality(i)}
