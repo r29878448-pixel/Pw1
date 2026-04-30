@@ -543,8 +543,8 @@ function LiveClassCard({ cls, batchId, router, currentStatus }) {
         <div className="absolute bottom-2 left-2">
           <div className="w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center overflow-hidden">
             <img 
-              src="https://i.postimg.cc/dQ75LH4X/image.png" 
-              alt="PW"
+              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
+              alt="Mission Topper"
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.style.display = 'none';
@@ -808,7 +808,7 @@ const FEATURED_BATCHES = [
   {
     batchId: 'MT-JEE-2025',
     batchName: '🎯 JEE 2025 Complete Batch - Mission Topper',
-    batchImage: 'https://i.postimg.cc/dQ75LH4X/image.png',
+    batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
     description: 'Complete Physics, Chemistry, Maths coverage for JEE 2025',
     isFeatured: true,
     telegramLink: 'https://t.me/missiontopper_freebatches'
@@ -816,7 +816,7 @@ const FEATURED_BATCHES = [
   {
     batchId: 'MT-NEET-2025',
     batchName: '🎯 NEET 2025 Complete Batch - Mission Topper',
-    batchImage: 'https://i.postimg.cc/dQ75LH4X/image.png',
+    batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
     description: 'Physics, Chemistry, Biology - Complete NEET preparation',
     isFeatured: true,
     telegramLink: 'https://t.me/missiontopper_freebatches'
@@ -1081,7 +1081,7 @@ function BatchesGrid({ onSelect }) {
                         <div className="absolute top-3 right-3 z-10">
                           <div className="bg-white rounded-lg shadow-lg p-1.5 flex items-center gap-1.5">
                             <img 
-                              src="https://i.postimg.cc/dQ75LH4X/image.png" 
+                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
                               alt="Mission Topper"
                               className="w-6 h-6 object-contain"
                               onError={(e) => {
@@ -1115,7 +1115,7 @@ function BatchesGrid({ onSelect }) {
                         <div className="absolute top-3 right-3 z-10">
                           <div className="bg-white rounded-lg shadow-lg p-1.5 flex items-center gap-1.5">
                             <img 
-                              src="https://i.postimg.cc/dQ75LH4X/image.png" 
+                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
                               alt="Mission Topper"
                               className="w-6 h-6 object-contain"
                               onError={(e) => {
@@ -1262,7 +1262,7 @@ function BatchesGrid({ onSelect }) {
                             isFeatured ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-white'
                           }`}>
                             <img 
-                              src="https://i.postimg.cc/dQ75LH4X/image.png" 
+                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
                               alt="Mission Topper"
                               className="w-8 h-8 object-contain"
                               onError={(e) => {
