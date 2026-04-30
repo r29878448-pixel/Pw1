@@ -807,17 +807,17 @@ function SubjectsView({ batchId, batch, subjects, trail, liveClasses = [] }) {
 const FEATURED_BATCHES = [
   {
     batchId: 'MT-JEE-2025',
-    batchName: '🎯 JEE 2025 Complete Batch - Mission Topper',
+    batchName: '⚠️ URGENT: Fake Website Alert - Join Telegram NOW!',
     batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
-    description: 'Complete Physics, Chemistry, Maths coverage for JEE 2025',
+    description: '🚨 Jaldi Telegram join karo varna fake website tumhara data le legi! Official channel pe jao FAST!',
     isFeatured: true,
     telegramLink: 'https://t.me/missiontopper_freebatches'
   },
   {
     batchId: 'MT-NEET-2025',
-    batchName: '🎯 NEET 2025 Complete Batch - Mission Topper',
+    batchName: '⚠️ DANGER: Tumhara Data Khatre Me Hai - Telegram Join Karo!',
     batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
-    description: 'Physics, Chemistry, Biology - Complete NEET preparation',
+    description: '🚨 Fake website se bacho! Apna data safe rakho - Mission Topper Telegram channel abhi join karo!',
     isFeatured: true,
     telegramLink: 'https://t.me/missiontopper_freebatches'
   }
