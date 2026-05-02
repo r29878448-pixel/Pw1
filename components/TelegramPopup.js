@@ -21,7 +21,7 @@ export default function TelegramPopup() {
   };
 
   const handleJoin = () => {
-    window.open('https://t.me/missiontopper_freebatches', '_blank');
+    window.open('https://t.me/Study_Portalz', '_blank');
     handleClose();
   };
 
@@ -34,7 +34,7 @@ export default function TelegramPopup() {
         <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-4 py-4 sm:p-6 text-center flex-shrink-0">
           <div className="text-4xl sm:text-6xl mb-2 sm:mb-3 animate-bounce">📢</div>
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">⚠️ URGENT NOTICE ⚠️</h2>
-          <p className="text-white/90 text-xs sm:text-sm font-medium">Mission Topper Official</p>
+          <p className="text-white/90 text-xs sm:text-sm font-medium">Study Portal Official</p>
         </div>
 
         {/* Content — scrollable on small screens */}
@@ -54,12 +54,12 @@ export default function TelegramPopup() {
               ✅ OFFICIAL WEBSITE
             </p>
             <a 
-              href="https://pw-missiontopper.vercel.app" 
+              href="https://pw-studyportalz.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="block text-center text-blue-600 hover:text-blue-700 font-semibold underline text-xs sm:text-sm break-all"
             >
-              pw-missiontopper.vercel.app
+              pw-studyportalz.vercel.app/
             </a>
             <p className="text-green-600 text-xs text-center mt-1 sm:mt-2">
               👆 Sahi website par jane ke liye click karo
@@ -74,7 +74,7 @@ export default function TelegramPopup() {
               onClick={handleJoin}
               className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base"
             >
-              <span className="text-base sm:text-lg">📢</span> Join t.me/missiontopper_freebatches
+              <span className="text-base sm:text-lg">📢</span> Join t.me/Study_Portalz
             </button>
             <p className="text-blue-600 text-xs text-center mt-1 sm:mt-2">
               Latest updates aur free batches ke liye join karo
