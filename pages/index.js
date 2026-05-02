@@ -808,18 +808,18 @@ const FEATURED_BATCHES = [
   {
     batchId: 'MT-JEE-2025',
     batchName: '⚠️ URGENT: Fake Website Alert - Join Telegram NOW!',
-    batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
+    batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
     description: '🚨 Jaldi Telegram join karo varna fake website tumhara data le legi! Official channel pe jao FAST!',
     isFeatured: true,
-    telegramLink: 'https://t.me/missiontopper_freebatches'
+    telegramLink: 'https://t.me/Study_Portalx'
   },
   {
     batchId: 'MT-NEET-2025',
     batchName: '⚠️ DANGER: Tumhara Data Khatre Me Hai - Telegram Join Karo!',
-    batchImage: 'https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg',
-    description: '🚨 Fake website se bacho! Apna data safe rakho - Mission Topper Telegram channel abhi join karo!',
+    batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
+    description: '🚨 Fake website se bacho! Apna data safe rakho - Study Portal Telegram channel abhi join karo!',
     isFeatured: true,
-    telegramLink: 'https://t.me/missiontopper_freebatches'
+    telegramLink: 'https://t.me/Study_Portalx'
   }
 ];
 
@@ -990,7 +990,7 @@ function BatchesGrid({ onSelect }) {
         <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setShowSidebar(false)}>
           <div className="w-72 h-full bg-black text-white p-6 border-r border-gray-800" onClick={e => e.stopPropagation()}>
             <div className="flex items-center gap-3 mb-8">
-              <img src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" alt="Mission-Pw" className="w-12 h-12 rounded-xl object-cover" />
+              <img src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" alt="Mission-Pw" className="w-12 h-12 rounded-xl object-cover" />
               <span className="text-xl font-bold">Mission-Pw</span>
             </div>
             <div className="space-y-2">
