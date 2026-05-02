@@ -990,8 +990,8 @@ function BatchesGrid({ onSelect }) {
         <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setShowSidebar(false)}>
           <div className="w-72 h-full bg-black text-white p-6 border-r border-gray-800" onClick={e => e.stopPropagation()}>
             <div className="flex items-center gap-3 mb-8">
-              <img src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" alt="Mission-Pw" className="w-12 h-12 rounded-xl object-cover" />
-              <span className="text-xl font-bold">Mission-Pw</span>
+              <img src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" alt="Study-Portal" className="w-12 h-12 rounded-xl object-cover" />
+              <span className="text-xl font-bold">Study-Portal</span>
             </div>
             <div className="space-y-2">
               <button 
@@ -1094,7 +1094,7 @@ function BatchesGrid({ onSelect }) {
 
                         {/* Warning Banner - Bottom */}
                         <a
-                          href="https://pw-missiontopper.vercel.app"
+                          href="https://pw-studyportalz.vercel.app"
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
@@ -1128,7 +1128,7 @@ function BatchesGrid({ onSelect }) {
 
                         {/* Warning Banner - Bottom */}
                         <a
-                          href="https://pw-missiontopper.vercel.app"
+                          href="https://pw-studyportalz.vercel.app"
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
@@ -1296,7 +1296,7 @@ function BatchesGrid({ onSelect }) {
 
                         {/* Warning Banner - Bottom - Clickable */}
                         <a
-                          href="https://pw-missiontopper.vercel.app"
+                          href="https://pw-studyportalz.vercel.app"
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
@@ -1447,14 +1447,7 @@ export default function Home() {
       {/* Telegram Popup */}
       <TelegramPopup />
       
-      <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-3">
-          <button onClick={goHome} className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center text-white font-bold shadow hover:scale-105 transition-transform">
-            ⚡
-          </button>
-          <span className="font-bold text-gray-900">Physics Wallah</span>
-        </div>
-      </nav>
+      
 
       {loadingBatch && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
