@@ -18,7 +18,7 @@ export default function Donate() {
       const res = await fetch('/api/proxy/pw-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: `91${phone}` }),
+        body: JSON.stringify({ phoneNumber: phone }),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -43,7 +43,7 @@ export default function Donate() {
       const verifyRes = await fetch('/api/proxy/pw-verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: `91${phone}`, otp, randomid: randomId }),
+        body: JSON.stringify({ phoneNumber: phone, otp, randomid: randomId }),
       });
       const verifyData = await verifyRes.json();
       if (!verifyRes.ok || !verifyData.success) {
@@ -132,7 +132,7 @@ export default function Donate() {
           <p className="text-gray-500 text-sm mt-1">
             {step === 'phone'
               ? 'We will send a verification code to this number.'
-              : `A code has been sent to +91${phone}.`}
+              : `A code has been sent to +91 ${phone}.`}
           </p>
         </div>
 
