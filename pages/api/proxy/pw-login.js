@@ -14,12 +14,19 @@ export default async function handler(req, res) {
     });
     clearTimeout(timeout);
 
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      return res.status(502).json({ success: false, message: `Upstream error (${response.status}): ${text.slice(0, 200)}` });
+    }
+
     res.status(response.status).json(data);
   } catch (e) {
     if (e.name === 'AbortError') {
-      return res.status(504).json({ error: 'Upstream API timed out' });
+      return res.status(504).json({ success: false, message: 'Request timed out. Try again.' });
     }
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ success: false, message: e.message });
   }
 }
