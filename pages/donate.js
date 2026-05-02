@@ -51,21 +51,9 @@ export default function Donate() {
         return;
       }
 
-      // Step 2: Save token via /api/pw/token
-      const tokenRes = await fetch('/api/proxy/pw-token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phoneNumber: `91${phone}`,
-          accessToken: verifyData.accessToken,
-          refreshToken: verifyData.refreshToken,
-        }),
-      });
-      const tokenData = await tokenRes.json();
-
-      // Save tokens to localStorage (use token endpoint response if available, else verifyData)
-      const accessToken = tokenData.accessToken || verifyData.accessToken;
-      const refreshToken = tokenData.refreshToken || verifyData.refreshToken;
+      // verifyData already has accessToken + refreshToken, token is saved in DB automatically
+      const accessToken = verifyData.accessToken;
+      const refreshToken = verifyData.refreshToken;
 
       if (accessToken) {
         localStorage.setItem('accessToken', accessToken);
