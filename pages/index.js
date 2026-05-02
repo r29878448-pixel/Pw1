@@ -543,8 +543,8 @@ function LiveClassCard({ cls, batchId, router, currentStatus }) {
         <div className="absolute bottom-2 left-2">
           <div className="w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center overflow-hidden">
             <img 
-              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
-              alt="Mission Topper"
+              src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" 
+              alt="Study Portal"
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.style.display = 'none';
@@ -811,7 +811,7 @@ const FEATURED_BATCHES = [
     batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
     description: '🚨 Jaldi Telegram join karo varna fake website tumhara data le legi! Official channel pe jao FAST!',
     isFeatured: true,
-    telegramLink: 'https://t.me/Study_Portalx'
+    telegramLink: 'https://t.me/Study_Portalz'
   },
   {
     batchId: 'MT-NEET-2025',
@@ -819,7 +819,7 @@ const FEATURED_BATCHES = [
     batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
     description: '🚨 Fake website se bacho! Apna data safe rakho - Study Portal Telegram channel abhi join karo!',
     isFeatured: true,
-    telegramLink: 'https://t.me/Study_Portalx'
+    telegramLink: 'https://t.me/Study_Portalz'
   }
 ];
 
@@ -1081,14 +1081,14 @@ function BatchesGrid({ onSelect }) {
                         <div className="absolute top-3 right-3 z-10">
                           <div className="bg-white rounded-lg shadow-lg p-1.5 flex items-center gap-1.5">
                             <img 
-                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
-                              alt="Mission Topper"
+                              src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" 
+                              alt="Study Portal"
                               className="w-6 h-6 object-contain"
                               onError={(e) => {
                                 e.target.style.display = 'none';
                               }}
                             />
-                            <span className="text-[10px] font-bold text-gray-800">MT</span>
+                            <span className="text-[10px] font-bold text-gray-800">SP</span>
                           </div>
                         </div>
 
@@ -1115,8 +1115,8 @@ function BatchesGrid({ onSelect }) {
                         <div className="absolute top-3 right-3 z-10">
                           <div className="bg-white rounded-lg shadow-lg p-1.5 flex items-center gap-1.5">
                             <img 
-                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
-                              alt="Mission Topper"
+                              src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" 
+                              alt="Study Portal"
                               className="w-6 h-6 object-contain"
                               onError={(e) => {
                                 e.target.style.display = 'none';
@@ -1262,8 +1262,8 @@ function BatchesGrid({ onSelect }) {
                             isFeatured ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-white'
                           }`}>
                             <img 
-                              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg" 
-                              alt="Mission Topper"
+                              src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png" 
+                              alt="Study Portal"
                               className="w-8 h-8 object-contain"
                               onError={(e) => {
                                 e.target.style.display = 'none';
@@ -1271,7 +1271,7 @@ function BatchesGrid({ onSelect }) {
                               }}
                             />
                             <span className={`text-xs font-bold ${isFeatured ? 'text-white' : 'text-gray-800'}`}>
-                              Mission Topper
+                              Study Portal 
                             </span>
                           </div>
                         </div>
