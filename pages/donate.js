@@ -37,20 +37,42 @@ export default function Donate() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('/api/proxy/pw-verify', {
+      // Step 1: Verify OTP
+      const verifyRes = await fetch('/api/proxy/pw-verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phoneNumber: `91${phone}`, otp }),
       });
-      const data = await res.json();
-      if (res.ok && data.success && data.accessToken) {
-        localStorage.setItem('accessToken', data.accessToken);
-        localStorage.setItem('refreshToken', data.refreshToken);
-        localStorage.removeItem('enrolledBatches');
-        setStep('donated');
-      } else {
-        setError(data.message || 'Invalid OTP.');
+      const verifyData = await verifyRes.json();
+      if (!verifyRes.ok || !verifyData.success) {
+        setError(verifyData.message || 'Invalid OTP.');
+        return;
       }
+
+      // Step 2: Save token via /api/pw/token
+      const tokenRes = await fetch('/api/proxy/pw-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phoneNumber: `91${phone}`,
+          accessToken: verifyData.accessToken,
+          refreshToken: verifyData.refreshToken,
+        }),
+      });
+      const tokenData = await tokenRes.json();
+
+      // Save tokens to localStorage (use token endpoint response if available, else verifyData)
+      const accessToken = tokenData.accessToken || verifyData.accessToken;
+      const refreshToken = tokenData.refreshToken || verifyData.refreshToken;
+
+      if (accessToken) {
+        localStorage.setItem('accessToken', accessToken);
+      }
+      if (refreshToken) {
+        localStorage.setItem('refreshToken', refreshToken);
+      }
+      localStorage.removeItem('enrolledBatches');
+      setStep('donated');
     } catch (e) {
       setError(e.message || 'Something went wrong.');
     } finally {
