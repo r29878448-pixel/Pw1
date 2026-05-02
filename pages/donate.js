@@ -5,6 +5,7 @@ export default function Donate() {
   const router = useRouter();
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState('');
+  const [randomId, setRandomId] = useState('');
   const [step, setStep] = useState('phone'); // phone | otp | donated
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -21,6 +22,7 @@ export default function Donate() {
       });
       const data = await res.json();
       if (res.ok && data.success) {
+        setRandomId(data.randomId || '');
         setStep('otp');
       } else {
         setError(data.message || 'Failed to send OTP.');
@@ -41,7 +43,7 @@ export default function Donate() {
       const verifyRes = await fetch('/api/proxy/pw-verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: `91${phone}`, otp }),
+        body: JSON.stringify({ phoneNumber: `91${phone}`, otp, randomid: randomId }),
       });
       const verifyData = await verifyRes.json();
       if (!verifyRes.ok || !verifyData.success) {
@@ -200,7 +202,7 @@ export default function Donate() {
             </button>
             <button
               type="button"
-              onClick={() => { setStep('phone'); setOtp(''); setError(''); }}
+              onClick={() => { setStep('phone'); setOtp(''); setRandomId(''); setError(''); }}
               className="w-full py-2 text-indigo-600 hover:text-indigo-800 text-sm font-medium transition"
             >
               Use a different number
