@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { getApiUrl, getBatchWithEdits } from '../lib/apiConfig';
 import { decryptData } from '@/lib/decryptBrowser';
 import TelegramPopup from '../components/TelegramPopup';
+import BatchWarningBanner from '../components/BatchWarningBanner';
 // ─── API ──────────────────────────────────────────────────────────────────────
 // API calls through Vercel routes (handles CORS properly)
 const api = async (endpoint) => {
