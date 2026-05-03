@@ -1092,19 +1092,7 @@ function BatchesGrid({ onSelect }) {
                         </div>
 
                         {/* Warning Banner - Bottom */}
-                        <a
-                          href="https://pw-studyportalz.vercel.app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-700 text-white py-1.5 px-2 flex items-center justify-center gap-1.5 hover:from-red-700 hover:to-red-800 transition-all cursor-pointer z-10"
-                        >
-                          <span className="text-[10px] font-bold animate-pulse">⚠️</span>
-                          <span className="text-[10px] font-bold text-center leading-tight">
-                            Fake site? Official pe jao
-                          </span>
-                          <span className="text-[10px]">→</span>
-                        </a>
+                        
                       </div>
                     ) : (
                       <div className="relative h-40 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -1125,19 +1113,7 @@ function BatchesGrid({ onSelect }) {
                           </div>
                         </div>
 {/* Warning Banner - Bottom */}
-                        <a
-                          href="https://pw-studyportalz.vercel.app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-700 text-white py-1.5 px-2 flex items-center justify-center gap-1.5 hover:from-red-700 hover:to-red-800 transition-all cursor-pointer z-10"
-                        >
-                          <span className="text-[10px] font-bold animate-pulse">⚠️</span>
-                          <span className="text-[10px] font-bold text-center leading-tight">
-                            Fake site? Official pe jao
-                          </span>
-                          <span className="text-[10px]">→</span>
-                        </a>
+                        
                       </div>
                     )}
                         
@@ -1294,23 +1270,7 @@ function BatchesGrid({ onSelect }) {
                         )}
 
                         {/* Warning Banner - Bottom - Clickable */}
-                        <a
-                          href="https://pw-studyportalz.vercel.app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className={`absolute bottom-0 left-0 right-0 text-white py-2 px-3 flex items-center justify-center gap-2 transition-all cursor-pointer z-10 ${
-                            isFeatured 
-                              ? 'bg-gradient-to-r from-red-600 via-red-700 to-orange-600 hover:from-red-700 hover:via-red-800 hover:to-orange-700' 
-                              : 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800'
-                          }`}
-                        >
-                          <span className="text-xs font-bold animate-pulse">⚠️</span>
-                          <span className="text-xs font-bold text-center leading-tight">
-                            Fake website se bacho! Official site pe jao
-                          </span>
-                          <span className="text-xs">→</span>
-                        </a>
+                        
                       </div>
                       
                       {/* Content */}
