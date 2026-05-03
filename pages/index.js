@@ -1125,22 +1125,7 @@ function BatchesGrid({ onSelect }) {
                           </div>
                         </div>
 
-                        {/* Warning Banner - Bottom */}
-                        <a
-                          href="https://pw-studyportalz.vercel.app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-700 text-white py-1.5 px-2 flex items-center justify-center gap-1.5 hover:from-red-700 hover:to-red-800 transition-all cursor-pointer z-10"
-                        >
-                          <span className="text-[10px] font-bold animate-pulse">⚠️</span>
-                          <span className="text-[10px] font-bold text-center leading-tight">
-                            Fake site? Official pe jao
-                          </span>
-                          <span className="text-[10px]">→</span>
-                        </a>
-                      </div>
-                    )}
+                        
                     
                     {/* Enrolled Badge */}
                     <div className="absolute top-3 left-3 z-20 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1 shadow-lg">
