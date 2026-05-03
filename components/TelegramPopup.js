@@ -38,33 +38,7 @@ export default function TelegramPopup() {
         </div>
 
         {/* Content — scrollable on small screens */}
-        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 overflow-y-auto">
-          <div className="bg-red-50 border-2 border-red-300 rounded-xl p-3 sm:p-4">
-            <p className="text-red-700 font-bold text-center text-base sm:text-lg mb-1 sm:mb-2">
-              🚨 FAKE WEBSITE ALERT 🚨
-            </p>
-            <p className="text-red-600 text-xs sm:text-sm text-center leading-relaxed">
-              Agar aapko ye batch kisi aur ne send kiya hai, turant leave karo! 
-              Ye fake website ho sakti hai jo aapka data chura sakti hai.
-            </p>
-          </div>
-
-          <div className="bg-green-50 border-2 border-green-300 rounded-xl p-3 sm:p-4">
-            <p className="text-green-700 font-bold text-center mb-1 sm:mb-2 text-sm sm:text-base">
-              ✅ OFFICIAL WEBSITE
-            </p>
-            <a 
-              href="https://pw-studyportalz.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block text-center text-blue-600 hover:text-blue-700 font-semibold underline text-xs sm:text-sm break-all"
-            >
-              pw-studyportalz.vercel.app/
-            </a>
-            <p className="text-green-600 text-xs text-center mt-1 sm:mt-2">
-              👆 Sahi website par jane ke liye click karo
-            </p>
-          </div>
+        
 
           <div className="bg-blue-50 border-2 border-blue-300 rounded-xl p-3 sm:p-4">
             <p className="text-blue-700 font-bold text-center mb-2 sm:mb-3 text-sm sm:text-base">
@@ -81,12 +55,7 @@ export default function TelegramPopup() {
             </p>
           </div>
 
-          <div className="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-2.5 sm:p-3">
-            <p className="text-yellow-700 text-xs text-center font-medium">
-              ⚠️ Apna data safe rakho! Fake websites se door raho!
-            </p>
-          </div>
-        </div>
+
 
         {/* Footer */}
         <div className="bg-gray-50 px-4 sm:px-6 py-3 sm:py-4 flex justify-center flex-shrink-0">
@@ -94,7 +63,7 @@ export default function TelegramPopup() {
             onClick={handleClose}
             className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-xl transition-all text-sm sm:text-base"
           >
-            Samajh Gaya
+            Already Joined 
           </button>
         </div>
       </div>
