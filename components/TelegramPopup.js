@@ -8,7 +8,7 @@ export default function TelegramPopup() {
     const timer = setTimeout(() => {
       const hasSeenPopup = localStorage.getItem('telegram_popup_seen');
       if (!hasSeenPopup) {
-        setShow(false);
+        setShow(true);
       }
     }, 2000);
 
