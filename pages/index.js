@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { getApiUrl, getBatchWithEdits } from '../lib/apiConfig';
 import { decryptData } from '@/lib/decryptBrowser';
 import TelegramPopup from '../components/TelegramPopup';
-import BatchWarningBanner from '../components/BatchWarningBanner';
+
 // ─── API ──────────────────────────────────────────────────────────────────────
 // API calls through Vercel routes (handles CORS properly)
 const api = async (endpoint) => {
@@ -1161,8 +1161,7 @@ function BatchesGrid({ onSelect }) {
       {/* All Batches View */}
       {currentView === 'batches' && (
         <div className="max-w-7xl mx-auto px-4 py-6">
-          {/* Warning Banners */}
-          <BatchWarningBanner />
+          
           
           {/* Search Bar */}
           <div className="mb-6">
