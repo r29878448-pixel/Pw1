@@ -2,17 +2,7 @@ export default function BatchWarningBanner() {
   return (
     <div className="space-y-3 mb-6">
       {/* Warning 1 - Fake Website Alert */}
-      <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-4 shadow-lg border-2 border-red-400">
-        <div className="flex items-start gap-3">
-          <div className="text-3xl flex-shrink-0 animate-pulse">🚨</div>
-          <div className="flex-1">
-            <h3 className="text-white font-bold text-lg mb-2">⚠️ FAKE WEBSITE ALERT</h3>
-            <p className="text-white/95 text-sm leading-relaxed mb-3">
-              Ye Real Website Hai Qgar Is Type Ka Dusra Website Dikhe, <span className="font-bold underline">turant leave karo!</span> 
-              Wo fake website ho sakti hai jo aapka data chura sakti hai. Apna data safe rakho!
-            </p>
-            
-          </div>
+      
         </div>
       </div>
 
@@ -23,8 +13,8 @@ export default function BatchWarningBanner() {
           <div className="flex-1">
             <h3 className="text-white font-bold text-lg mb-2">📱 Study Portal Official Telegram</h3>
             <p className="text-white/95 text-sm leading-relaxed mb-3">
-              Ye batches <span className="font-bold">Study Portal</span> ne provide kiye hain. 
-              Latest updates, free batches aur important announcements ke liye official Telegram channel join karo!
+              Join  <span className="font-bold">Study Portal</span> Telegram Channel For
+              Latest updates And Other Info Join Channel Now!
             </p>
             <a
               href="https://t.me/Study_Portalz"
