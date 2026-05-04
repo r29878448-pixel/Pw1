@@ -16,7 +16,7 @@ export default function TelegramPopup() {
   }, []);
 
   const handleClose = () => {
-    setShow(true);
+    setShow(false);
     localStorage.setItem('telegram_popup_seen', 'true');
   };
 
@@ -34,7 +34,7 @@ export default function TelegramPopup() {
         <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-4 py-4 sm:p-6 text-center flex-shrink-0">
           <div className="text-4xl sm:text-6xl mb-2 sm:mb-3 animate-bounce">📢</div>
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">⚠️ URGENT NOTICE ⚠️</h2>
-          <p className="text-white/90 text-xs sm:text-sm font-medium">Study Portal Official</p>
+          <p className="text-white/90 text-xs sm:text-sm font-medium">Study Portal </p>
         </div>
 
         {/* Content — scrollable on small screens */}
