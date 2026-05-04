@@ -32,7 +32,7 @@ export default function BatchWarningBanner() {
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm"
             >
-              <span className="text-lg">📢</span> Join t.me/Study_Portalz
+              <span className="text-lg">📢</span> Study_Portalz
             </a>
           </div>
         </div>
