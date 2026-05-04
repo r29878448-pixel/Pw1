@@ -1,4 +1,4 @@
-export default function BatchWarningBanner(null) {
+export default function BatchWarningBanner() {
   return (
     <div className="space-y-3 mb-6">
       {/* Warning 1 - Fake Website Alert */}
