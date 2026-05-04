@@ -1,10 +1,5 @@
 export default function BatchWarningBanner() {
   return (
-    <div className="space-y-3 mb-6">
-      {/* Warning 1 - Fake Website Alert */}
-      
-        </div>
-      </div>
 
       {/* Warning 2 - Join Telegram */}
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-4 shadow-lg border-2 border-blue-400">
