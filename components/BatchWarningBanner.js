@@ -8,21 +8,10 @@ export default function BatchWarningBanner() {
           <div className="flex-1">
             <h3 className="text-white font-bold text-lg mb-2">⚠️ FAKE WEBSITE ALERT</h3>
             <p className="text-white/95 text-sm leading-relaxed mb-3">
-              Agar aapko ye batch kisi aur ne send kiya hai, <span className="font-bold underline">turant leave karo!</span> 
-              Ye fake website ho sakti hai jo aapka data chura sakti hai. Apna data safe rakho!
+              Ye Real Website Hai Qgar Is Type Ka Dusra Website Dikhe, <span className="font-bold underline">turant leave karo!</span> 
+              Wo fake website ho sakti hai jo aapka data chura sakti hai. Apna data safe rakho!
             </p>
-            <div className="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
-              <p className="text-white font-semibold text-sm mb-2">✅ Official Website:</p>
-              <a 
-                href="https://pw-studyportalz.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-red-600 hover:bg-red-50 font-bold py-2 px-4 rounded-lg transition-all transform hover:scale-105 text-sm shadow-md"
-              >
-                🔗 pw-studyportalz.vercel.app/
-              </a>
-              <p className="text-white/90 text-xs mt-2">👆 Sahi website par jane ke liye click karo</p>
-            </div>
+            
           </div>
         </div>
       </div>
