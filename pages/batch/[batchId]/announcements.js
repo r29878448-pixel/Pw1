@@ -69,8 +69,8 @@ function AnnouncementCard({ item }) {
         <div className="flex items-center gap-3 mb-4">
           <div className="relative flex-shrink-0">
             <img
-              src="https://i.ibb.co/x8Hr5nj6/photo-6267164133585260337-x.jpg"
-              alt="MissionTopper"
+              src="https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png"
+              alt="Study Portal"
               width={44}
               height={44}
               className="rounded-full border-2 border-white shadow-sm"
@@ -79,7 +79,7 @@ function AnnouncementCard({ item }) {
           </div>
           <div className="flex-1 min-w-0">
             <p className="font-semibold text-gray-900 text-sm flex items-center gap-1.5 flex-wrap">
-              MissionTopper Team
+              Study Portal Team
               <span className="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-semibold">Official</span>
             </p>
             <p className="text-xs text-gray-400 mt-0.5 flex items-center gap-1">
