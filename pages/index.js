@@ -805,7 +805,7 @@ function SubjectsView({ batchId, batch, subjects, trail, liveClasses = [] }) {
 // ─── Featured Mission Topper Batches ──────────────────────────────────────────
 const FEATURED_BATCHES = [
   {
-    batchId: 'MT-JEE-2025',
+    batchId: 'SP-JEE-2025',
     batchName: '⚠️ URGENT: Fake Website Alert - Join Telegram NOW!',
     batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
     description: '🚨 Jaldi Telegram join karo varna fake website tumhara data le legi! Official channel pe jao FAST!',
@@ -813,7 +813,7 @@ const FEATURED_BATCHES = [
     telegramLink: 'https://t.me/Study_Portalz'
   },
   {
-    batchId: 'MT-NEET-2025',
+    batchId: 'SP-NEET-2025',
     batchName: '⚠️ DANGER: Tumhara Data Khatre Me Hai - Telegram Join Karo!',
     batchImage: 'https://i.ibb.co/m53b0YKH/file-00000000d664720997f7f5165cbd5131.png',
     description: '🚨 Fake website se bacho! Apna data safe rakho - Study Portal Telegram channel abhi join karo!',
@@ -1109,7 +1109,7 @@ function BatchesGrid({ onSelect }) {
                                 e.target.style.display = 'none';
                               }}
                             />
-                            <span className="text-[10px] font-bold text-gray-800">MT</span>
+                            <span className="text-[10px] font-bold text-gray-800">SP</span>
                           </div>
                         </div>
 {/* Warning Banner - Bottom */}
