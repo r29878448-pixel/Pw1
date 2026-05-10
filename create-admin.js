@@ -5,12 +5,12 @@ const { initializeApp } = require('firebase/app');
 const { getAuth, createUserWithEmailAndPassword } = require('firebase/auth');
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDcXX5F1b5OWBthflH_UlyvIye3RbLQH3o",
-  authDomain: "study-portal-1680a.firebaseapp.com",
-  projectId: "study-portal-1680a",
-  storageBucket: "study-portal-1680a.firebasestorage.app",
-  messagingSenderId: "820409379035",
-  appId: "1:820409379035:web:90af88cc4db34f8c2704fe"
+  apiKey: "AIzaSyDy4cef7XvSOQ0kI-geiBD_-1ZhQ7dlnNg",
+  authDomain: "pw-missiontopper-d603d.firebaseapp.com",
+  projectId: "pw-missiontopper-d603d",
+  storageBucket: "pw-missiontopper-d603d.firebasestorage.app",
+  messagingSenderId: "41342728127",
+  appId: "1:41342728127:web:983b3e038dd59c6acc130a"
 };
 
 const app = initializeApp(firebaseConfig);
