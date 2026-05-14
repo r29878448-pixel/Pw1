@@ -27,7 +27,7 @@ function postReq(path, body) {
 function getReq(path) {
   return new Promise((resolve, reject) => {
     const t = setTimeout(() => reject(new Error('timeout')), 15000);
-    https.get('https://apiserver-6hat.onrender.com' + path, (res) => {
+    https.get('https://deltaserver.vercel.app' + path, (res) => {
       let d = ''; res.on('data', c => d += c);
       res.on('end', () => { clearTimeout(t); try { resolve(JSON.parse(d)); } catch (e) { resolve({}); } });
     }).on('error', e => { clearTimeout(t); reject(e); });
